@@ -14,7 +14,7 @@ public class Level1 {
             flag = false;
 
             for (int i = 0; i < n - 1; i++) {
-                if (ma[i + 1] >= ma[i]) {
+                if (ma[i + 1] > ma[i]) {
                     int x = ma[i];
 
                     ma[i] = ma[i + 1];
