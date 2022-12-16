@@ -2,25 +2,23 @@ public class Level1 {
     public static int MaximumDiscount(int n, int[] price) {
         if (n < 3) return 0;
 
-        int[] ma = new int[n];
+        int[] sortedPrice = new int[n];
 
-        for (int i = 0; i < n; i++) {
-            ma[i] = price[i];
-        }
+        System.arraycopy(price, 0, sortedPrice, 0, price.length);
 
-        boolean flag = true;
+        boolean isSorted = false;
 
-        while (flag) {
-            flag = false;
+        while (!isSorted) {
+            isSorted = true;
 
             for (int i = 0; i < n - 1; i++) {
-                if (ma[i + 1] > ma[i]) {
-                    int x = ma[i];
+                if (sortedPrice[i + 1] > sortedPrice[i]) {
+                    int x = sortedPrice[i];
 
-                    ma[i] = ma[i + 1];
-                    ma[i + 1] = x;
+                    sortedPrice[i] = sortedPrice[i + 1];
+                    sortedPrice[i + 1] = x;
 
-                    flag = true;
+                    isSorted = false;
                 }
             }
         }
@@ -28,7 +26,7 @@ public class Level1 {
         int discount = 0;
 
         for (int i = 2; i < n; i += 3) {
-            discount += ma[i];
+            discount += sortedPrice[i];
         }
 
         return discount;
