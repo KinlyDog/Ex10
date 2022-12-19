@@ -28,6 +28,7 @@ public class Level1 {
         for (int i = 2; i < n; i += 3) {
             discount += sortedPrice[i];
         }
+        sortedPrice = null;
 
         return discount;
     }
