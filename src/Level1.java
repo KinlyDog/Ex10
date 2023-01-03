@@ -1,3 +1,8 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.TreeSet;
+
 public class Level1 {
     public static int MaximumDiscount(int n, int[] price) {
         if (n < 3) return 0;
@@ -28,7 +33,6 @@ public class Level1 {
         for (int i = 2; i < n; i += 3) {
             discount += sortedPrice[i];
         }
-        sortedPrice = null;
 
         return discount;
     }
