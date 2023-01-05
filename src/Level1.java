@@ -28,8 +28,8 @@ public class Level1 {
             }
         }
 
+        // считаем максимальную скидку (каждый 3 товар бесплатно)
         int discount = 0;
-
         for (int i = 2; i < n; i += 3) {
             discount += sortedPrice[i];
         }
